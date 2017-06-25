@@ -28,3 +28,13 @@ char firstNotRepeatingCharacter2(String s) {
     }
     return '_';
 }
+
+char firstNotRepeatingCharacter3(String s) {
+    for (char c : s.toCharArray()) {
+        // last index 如果跟 first index 相等，说明就出现了一次（不可能出现0次）
+        if (s.lastIndexOf(c) == s.indexOf(c)) {
+            return c;
+        }
+    }
+    return '_';
+}
